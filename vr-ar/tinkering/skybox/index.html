@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="viewport" content="width=device-width">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <a-scene background="color: #333333">
+      <a-assets>
+          <img id="wood" src="images/wood.jpg" />
+          <img id="wood2" src="images/wood2.jpg" />
+          <img id="grass" src="images/grass.jpg" />
+          <img id="sky" src="images/sky.jpg">
+      </a-assets>
+
+      <a-camera>
+        <a-entity id="mouseCursor"
+          cursor="fuse: true; fuseTimeout: 1000">
+        </a-entity>
+        <a-ring id="cursorRing" 
+          position="0 0 -1"
+          radius-inner= "0.02"
+          radius-outer= "0.03"
+          material="color: red; shader: flat">
+        </a-ring>
+      </a-camera>
+      <a-sky src="#sky"></a-sky>
+    </a-scene>
+  </body>
+</html>
