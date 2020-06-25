@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<script src="scripts/main.js" defer></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+</div>
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+        <a-assets>
+            <a-asset-item id="fox" src="models/Fox.gltf"></a-asset-item>
+        </a-assets>
+
+
+		<a-marker preset='hiro'>
+            <a-gltf-model id="3dmodel" src="#fox" scale="0.02 0.02 0.02"></a-gltf-model>
+		</a-marker>
+
+		<a-entity camera>
+            <a-entity id="mouseCursor"
+              cursor="fuse: true; fuseTimeout: 1000">
+            </a-entity>
+            <a-ring id="cursorRing" 
+              position="0 0 -1"
+              radius-inner= "0.01"
+              radius-outer= "0.015"
+              material="color: red; shader: flat">
+            </a-ring>
+        </a-entity>
+	</a-scene>
+</body>
+</html>
+
